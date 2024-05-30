@@ -1,5 +1,5 @@
 # PixelFlix: A video streaming app with React, Firebase, and Firestore
-This project is a collaborative effort to build PixelFlix, a streaming service web application inspired by Netflix.
+### This project is a collaborative effort to build PixelFlix, a streaming service web application inspired by Netflix.
 
 ## Technologies Used
 **Frontend:** React, HTML, SASS  
@@ -10,7 +10,7 @@ This project is a collaborative effort to build PixelFlix, a streaming service w
 **public/:** Houses static files like favicon and any non-JavaScript assets.
 
 # Database Design (ERD)
-!["Alternative Text"](PixelFlix%20ERD.png)
+!["Alternative Text"](PixelFlix%20ERD1.png)
 
 ## Figma Design
 !["Alternative Text"](Design%20System%20Figma.png)
