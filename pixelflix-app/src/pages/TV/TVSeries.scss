@@ -1,0 +1,21 @@
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+
+.tvshows {
+  &__heading {
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 1rem;
+    font-weight: 200;
+    font-size: 1.4rem;
+
+    @include tablet {
+      padding-left: 1.5rem;
+      font-size: 2rem;
+    }
+
+    @include desktop {
+      padding-left: 0;
+    }
+  }
+}

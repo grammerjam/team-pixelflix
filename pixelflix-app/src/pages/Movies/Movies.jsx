@@ -1,15 +1,29 @@
 import "./Movies.scss";
-import React from "react";
-import { auth } from "../../firebase-config";
-import { signOut } from "firebase/auth";
-import { useNavigate } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { db } from "../../firebase-config";
+import { collection, getDocs } from "firebase/firestore";
+import MoviesList from "../../components/Movies/MoviesList";
 
-export default function Movies() {
-  const navigate = useNavigate();
+export default function MoviesPage() {
+  const [moviesList, setMoviesList] = useState([]);
+
+  useEffect(() => {
+    const getMovies = async () => {
+      const data = await getDocs(collection(db, "Movies-TV"));
+      const fetchedVideos = data.docs.map((doc) => ({
+        ...doc.data(),
+        id: doc.id,
+      }));
+      const category = fetchedVideos.filter((video) => video.category === "Movie");
+      setMoviesList(category);
+    };
+    getMovies();
+  }, []);
 
   return (
-    <div className="content">
-      <h1>Movies Page</h1>
+    <div className="movies">
+      <h2 className="movies__heading">Movies</h2>
+      <MoviesList movies={moviesList} />
     </div>
   );
 }

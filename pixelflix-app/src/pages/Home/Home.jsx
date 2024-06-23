@@ -7,7 +7,7 @@ import Navbar from "../../components/Navbar/Navbar";
 import Searchbar from "../../components/Searchbar/Searchbar";
 import Bookmarks from "../Bookmarks/Bookmarks";
 import Movies from "../Movies/Movies";
-import TV from "../TV/TV";
+import TV from "../TV/TVSeries";
 import Profile from "../Profile/Profile";
 import Account from "../Account/Account";
 import VideoList from "../../components/VideoList/VideoList";

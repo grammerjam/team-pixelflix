@@ -1,0 +1,92 @@
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+
+.tvshowcards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem;
+
+  @include tablet {
+    gap: 1.5rem;
+  }
+
+  @include desktop {
+    gap: 2rem;
+  }
+}
+
+.tvshowcard {
+  flex: 1 1 calc(50% - 1rem); // Default for mobile: 2 shows per row
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  overflow: hidden;
+  max-width: calc(50% - 1rem);
+
+  @include tablet {
+    flex: 1 1 calc(33.333% - 1.5rem); // 3 shows per row on tablet
+    max-width: calc(33.333% - 1.5rem);
+  }
+
+  @include desktop {
+    flex: 1 1 calc(33.333% - 2rem); // 3 shows per row on desktop
+    max-width: calc(33.333% - 2rem);
+  }
+
+  &__thumbnail {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: none;
+  }
+
+  &__info {
+    padding: 1rem;
+
+    .tvshowcard__info-details {
+      display: flex;
+      align-items: center;
+      color: $color-lightgray;
+      font-size: 0.9rem;
+      font-weight: 200;
+      margin-bottom: 0.5rem;
+
+      @include tablet {
+        font-size: 1.1rem;
+      }
+
+      .tvshowcard__info-bullet {
+        padding: 0 8px;
+        color: $color-lightgray;
+      }
+
+      .tvshowcard__info-category-container {
+        display: flex;
+        align-items: center;
+
+        .tvshowcard__info-category-icon {
+          padding-right: 5px;
+          height: 13px;
+
+          @include tablet {
+            height: 15px;
+          }
+        }
+      }
+    }
+
+    .tvshowcard__info-text {
+      color: $color-lightgray;
+    }
+
+    .tvshowcard__info-title {
+      color: $color-white;
+      font-size: 1.1rem;
+      font-weight: 300;
+
+      @include tablet {
+        font-size: 1.3rem;
+      }
+    }
+  }
+}
