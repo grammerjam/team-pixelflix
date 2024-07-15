@@ -22,7 +22,7 @@ function Navbar() {
         <div className="navbar__page-icons">
           <div className="navbar__imgcontainer">
             <Link to="/home">
-            <HomeIcon className={`navbar__icon-home ${
+              <HomeIcon className={`navbar__icon-home ${
                   location.pathname === "/home" ? "highlight" : ""
                 }`}
                 data-testid="navbar-home-icon"/>
@@ -30,7 +30,7 @@ function Navbar() {
           </div>
           <div className="navbar__imgcontainer">
             <Link to="/movies">
-            <MovieIcon className={`navbar__icon-movies ${
+              <MovieIcon className={`navbar__icon-movies ${
                   location.pathname === "/movies" ? "highlight" : ""
                 }`}
                 data-testid="navbar-movies-icon"
@@ -39,7 +39,7 @@ function Navbar() {
           </div>
           <div className="navbar__imgcontainer">
             <Link to="/tv">
-            <TvIcon className={`navbar__icon-tv ${
+              <TvIcon className={`navbar__icon-tv ${
                   location.pathname === "/tv" ? "highlight" : ""
                 }`}
                 data-testid="navbar-tv-icon"
@@ -48,7 +48,7 @@ function Navbar() {
           </div>
           <div className="navbar__imgcontainer">
             <Link to="/bookmarks">
-            <BookmarkIcon className={`navbar__icon-bookmarks ${
+              <BookmarkIcon className={`navbar__icon-bookmarks ${
                   location.pathname === "/bookmarks" ? "highlight" : ""
                 }`}
                 data-testid="navbar-bookmarks-icon"

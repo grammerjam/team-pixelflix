@@ -30,26 +30,6 @@ describe("Navbar Functionality", () => {
     jest.clearAllMocks();
   });
 
-  test("Should navigate to correct routes", () => {
-    const { getByTestId } = render(
-      <BrowserRouter>
-        <Navbar />
-      </BrowserRouter>
-    );
-
-    fireEvent.click(getByTestId("navbar-home-icon"));
-    expect(window.location.pathname).toBe("/home");
-
-    fireEvent.click(getByTestId("navbar-movies-icon"));
-    expect(window.location.pathname).toBe("/movies");
-
-    fireEvent.click(getByTestId("navbar-tv-icon"));
-    expect(window.location.pathname).toBe("/tv");
-
-    fireEvent.click(getByTestId("navbar-bookmarks-icon"));
-    expect(window.location.pathname).toBe("/bookmarks");
-  });
-
   const routes = [
     { path: "/home", label: "navbar-home-icon" },
     { path: "/movies", label: "navbar-movies-icon" },
@@ -58,16 +38,28 @@ describe("Navbar Functionality", () => {
   ];
 
   routes.forEach(({ path, label }) => {
-    test(`Should highlight active link for "${path}"`, () => {
-      useLocation.mockReturnValue({pathname: path});
+    test(`Should navigate to correct route for "${path}"`, () => {
+      const { getByTestId } = render(
+        <BrowserRouter>
+          <Navbar />
+        </BrowserRouter>
+      );
+  
+      fireEvent.click(getByTestId(label));
+      expect(window.location.pathname).toBe(path);
+    });
 
+    test(`Should highlight active link for "${path}"`, () => {
+      useLocation.mockReturnValue({ pathname: path })
+      
       const { getByTestId } = render(
         <BrowserRouter>
           <Navbar />
         </BrowserRouter>
       );
 
-      expect(getByTestId(label).classList.contains("highlight")).toBe(true);
+      expect(getByTestId(label)).toHaveClass("highlight");
+      
     });
   });
 });
