@@ -11,6 +11,14 @@
 
 PixelFlix is a video streaming web application inspired by Netflix, built with React, Firebase, and Firestore. The app provides users with a personalized streaming experience, allowing them to create multiple profiles, bookmark movies and shows, and view trending media. Key features include user authentication, profile management, trending recommendations, and media filtering by categories and genres.
 
+## Live Demo
+
+Check out the live version of **PixelFlix** by visiting the link below:
+
+[**PixelFlix - Live Demo**](https://pixelflix-88050.firebaseapp.com/)
+
+Create an account, explore the main features, and test the multi-profile experience in real-time!
+
 ## Requirements
 
 To run PixelFlix locally, you will need the following:
